@@ -1,45 +1,29 @@
 import streamlit as st
-# import api.py as api
-import requests
+import datetime
 
-st.title("Fx Converter")
+from frankfurter import get_currencies_list, get_latest_rates, get_historical_rate
+from currency import reverse_rate, round_rate, format_output
 
-# Get user input for amount to be converted
-st.number_input("Amount to be converted", value=50.00, step=0.01)
+# Display Streamlit App Title
 
+# Get the list of available currencies from Frankfurter
 
-# Get user input for currency to be converted from
-st.selectbox("From Currency", ("op1", "op2", "op3"),placeholder="Select a currency",)
+# If the list of available currencies is None, display an error message in Streamlit App
 
+# Add input fields for capturing amount, from and to currencies
 
-# Get user input for currency to be converted to
-st.selectbox("To Currency", ("op1", "op2", "op3"),placeholder="Select a currency",)
+# Add a button to get and display the latest rate for selected currencies and amount
 
+# Add a date selector (calendar)
 
-# button to get latest fx rates
-if st.button("Get Latest Rates"):
-    st.write("Latest Rates")
-
-# print latest fx rates
-st.write("Latest Conversion Rates")
+# Add a button to get and display the historical rate for selected date, currencies and amount
 
 
-# Get user input for date to get historical fx rates
-st.date_input("Select Date", value=None, min_value=None, max_value=None, key=None)
 
 
-# button to get historical fx rates
-if st.button("Get Historical Rates"):
-    st.write("Historical Rates")
-
-st.write("Conversion Rate")
 
 
-# currencies = api.get_currencies()
 
-# st.write(currencies)
 
-response = requests.get("https://api.frankfurter.app/currencies")
-currencies = response.json()
 
-st.write(currencies)
+
