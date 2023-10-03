@@ -31,9 +31,11 @@ def get_currencies_list():
 
 def get_latest_rates(from_currency, to_currency, amount):
     """
-    Function that will call the relevant API endpoint from Frankfurter in order to get the latest conversion rate between the provided currencies. 
+    Function that will call the relevant API endpoint from Frankfurter in order to get the latest conversion rate 
+    between the provided currencies. 
     After the API call, it will perform a check to see if the API call was successful.
-    If it is the case, it will load the response as JSON, extract the latest conversion rate and the date and return them as 2 separate objects.
+    If it is the case, it will load the response as JSON, extract the latest conversion rate 
+    and the date and return them as 2 separate objects.
     Otherwise it will return the value None twice.
 
     Parameters

@@ -43,10 +43,16 @@ if st.button("Get Latest Rates"):
         st.write("Latest Conversion Rate")
         st.write(format_output(latest_date, from_currency, to_currency, latest_rate, input_amount))
 
+
 # Add a date selector (calendar)
 
 input_date = st.date_input("Select Date", value=datetime.date.today(), min_value=None, max_value=None, key=None)
 
+# check that the date selected is not in the future
+
+if input_date > datetime.date.today():
+    st.error("Date cannot be in the future")
+    
 
 # Add a button to get and display the historical rate for selected date, currencies and amount
 

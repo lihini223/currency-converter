@@ -13,6 +13,11 @@ def round_rate(rate):
     float
         Rounded rate
     """
+
+    return round(rate, 4)
+
+
+
     
 
 def reverse_rate(rate):
@@ -32,6 +37,11 @@ def reverse_rate(rate):
     float
         Inverse of input FX conversion rate
     """
+
+    if rate != 0:
+        return 1/rate
+    else:
+        return 0
     
 def format_output(date, from_currency, to_currency, rate, amount):
     """
@@ -50,4 +60,7 @@ def format_output(date, from_currency, to_currency, rate, amount):
     float
         Inverse of input FX conversion rate
     """
+
+    return f"{amount} {from_currency} = {round_rate(rate)} {to_currency} on {date}"
+
    
