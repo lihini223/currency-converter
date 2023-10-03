@@ -19,6 +19,14 @@ def get_currencies_list():
     list
         List of available currencies or None in case of error
     """
+    url = f"{BASE_URL}/currencies"
+    status_code, response = get_url(url)
+    if status_code == 200:
+        return json.loads(response)
+    else:
+        return None
+
+
     
 
 def get_latest_rates(from_currency, to_currency, amount):
@@ -45,6 +53,13 @@ def get_latest_rates(from_currency, to_currency, amount):
         Latest FX conversion rate or None in case of error
     """
     
+    url = f"{BASE_URL}/latest?amount={amount}&from={from_currency}&to={to_currency}"
+    status_code, response = get_url(url)
+    if status_code == 200:
+        response = json.loads(response)
+        return response["date"], response["rates"][to_currency]
+    else:
+        return None, None
 
 def get_historical_rate(from_currency, to_currency, from_date, amount):
     """
@@ -70,4 +85,11 @@ def get_historical_rate(from_currency, to_currency, from_date, amount):
         Latest FX conversion rate or None in case of error
     """
     
+    url = f"{BASE_URL}/{from_date}?amount={amount}&from={from_currency}&to={to_currency}"
+    status_code, response = get_url(url)
+    if status_code == 200:
+        response = json.loads(response)
+        return response["rates"][to_currency]
+    else:
+        return None
 
