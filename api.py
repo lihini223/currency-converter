@@ -17,3 +17,8 @@ def get_url(url: str):
         Text from API call response
     """
 
+    try:
+        response = requests.get(url)
+        return response.status_code, response.text
+    except Exception as e:
+        return 500, str(e)
