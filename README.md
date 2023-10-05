@@ -9,9 +9,13 @@ Student ID: 25024175
 <What your application does>
 The FX Converter application can perform currency conversion using data fetched from an open-source API: https://www.frankfurter.app/ 
 
-The application has following functionalities:
+
+![FX Converter App UI](App UI.png)
+
+
+The application has following key functionalities:
 - Displays the current conversion rate between 2 currency codes for the alatest date. 
-- Displays the current conversion rate between 2 currency codes at a specific date. 
+- Displays the historical conversion rate between 2 currency codes at a specific date.
 - Calculate the inverse conversion rate between these 2 currencies.
 
 <Some of the challenges you faced>
